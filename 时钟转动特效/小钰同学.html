@@ -1,0 +1,106 @@
+<!-- 网页模板(基本代码结构) -> !+enter -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 开始标签 /结束标签 -->
+        <!-- 标题标签 -->
+        <title>时钟转动特效</title>
+        <!-- 装饰标签 CSS代码 -->
+        <style>
+            /* 标签选择器 标签名称{} */
+            body{
+                /* 外边距 */
+                margin: 0;
+                background-image: url("images/bg.webp");
+            }
+            /* 类选择器 .+类名{} */
+            .clock{
+                /* 样式名称:样式值; */
+                /* 相对定位 给绝对定位子元素作为参考物 */
+                position: relative;
+                /* 宽度 px(像素) */
+                width: 942px;
+                /* 高度 */
+                height: 941px;
+                /* 上下(0) 左右(自动相等) */
+                margin: 0 auto;
+                /* 背景颜色 颜色单词 
+                background-color: #9fcfd1;*/
+                /* 背景图片 url图片路径/地址 */
+                background-image: url("images/clock.webp");
+            }
+            .disc{
+                width: 987px;
+                height: 947px;
+                background-image: url("images/middle.webp");
+                /* 绑定动画 动画名称 时间 速度(匀速) 次数(无限循环) */
+                animation: clo-rotate 60s linear infinite;
+            }
+            /* 逗号 并列选择器 */
+            .hour,.minute{
+                /* 绝对定位 改变位置 默认参考物是浏览器窗口 */
+                position: absolute;
+                /* 上边 */
+                top: 0;
+                /* 左边 */
+                left: 0;
+                /* 右边 */
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+            .hour{
+                width: 861px;
+                height: 861px;
+                background-image: url("images/hour.webp");
+                animation: clo-rotate 200s linear infinite;
+            }
+            .minute{
+                width: 751px;
+                height: 751px;
+                background-image: url("images/min.webp");
+                animation: clo-rotate 60s linear infinite;
+            }
+            /* 关键帧 动画名称(自定义) */
+            @keyframes clo-rotate {
+                0%{
+                    /* 变换 旋转rotate(旋转值 度数deg) */
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+            /* 
+                CSS动画 -> 关键的画面(帧)
+                    从0deg开始 -> 旋转到360deg
+                
+            */
+        </style> 
+    </head>
+    <!-- 身体标签 -->
+    <body>
+        <!-- 盒子标签 命名(class类名) 大小(宽高) -->
+        <div class="clock">
+            <div class="disc"></div>
+            <div class="hour"></div>
+            <div class="minute"></div>
+        </div>
+    </body>
+</html>
+
+<!-- 
+    前端两个最基本的开发语言 -> HTML(标签) CSS(样式 装饰)
+
+    标签/元素 -> <字符> 马铃薯/土豆
+        双标签
+        单标签
+
+    保存 -> ctrl+s
+
+    见名知意 英文单词
+
+-->
